@@ -23,7 +23,7 @@
 \usepackage[bitstream-charter]{mathdesign}
 \usepackage{tikzsaw}
 \usepackage[most]{tcolorbox}
-\usepackage[paper=a4paper,margin=3cm]{geometry}
+\usepackage[paper=a4paper,margin=2.9cm]{geometry}
 \usepackage{url}
 \usepackage{xspace}
 \usepackage{scrlayer-scrpage} 
@@ -57,7 +57,7 @@
 	texcsstyle=*\color{duckblue}\bfseries,
 	keywordstyle=\color{red!60!black}\bfseries,
 	morekeywords={tikzpicture,scope,patterns,calc,pgfinterruptboundingbox},
-	moretexcs={marmot,path,definecolor,scalebox,foreach,node,draw,PassOptionsToPackage,usetikzlibrary,selectcolormodel,colorlet,includegraphics,tikzset,shade,duck},
+	moretexcs={marmot,path,definecolor,scalebox,foreach,node,draw,clip,PassOptionsToPackage,usetikzlibrary,selectcolormodel,colorlet,includegraphics,tikzset,shade,duck},
 	delim ={[s][\ttfamily\color{green!50!black}]{$}{$}},
 	moredelim=[is][\footnotesize\ttfamily\color{orange!70!black}]{|}{|},
 	moredelim={[s][\color{gray}]{<}{>}},
@@ -74,13 +74,14 @@
 	righthand width=5.7cm,
 	bottom=0pt, 
 	top=0pt,
+	sidebyside gap=10pt
 }
 
 \lstset{style=jigsawstyle}
 
 % meta %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \title{The \texorpdfstring{\tikzsaw}{tikzsaw} package}
-\subtitle{drawing jigsaw pieces in \TikZ}
+\subtitle{Drawing jigsaw pieces in \TikZ}
 \author{%
 	\texorpdfstring{
 		\begin{tikzpicture}
@@ -98,17 +99,13 @@
 \section{Introduction}
 \label{intro}
 
-The \tikzsaw package allows to draw adjustable jigsaw pieces in \TikZ, to combine them and even to automatically create complete jigsaws. It is based on an answer on TeX.Stackexchange\footnote{\url{https://tex.stackexchange.com/a/446296/36296}}
+The \tikzsaw package allows to draw adjustable jigsaw pieces in \TikZ, to combine them and even to automatically create complete jigsaws. It is based on the TeX.Stackexchange answers \url{https://tex.stackexchange.com/a/446296/36296}.
 
 The development version of this package is located at 
 \url{github.com/samcarter8/tikzsaw}. If you have any problems, ideas or other feedback, please make constructive use of its bug tracker.
 
-\subsection{License}
-
 Copyright \raisebox{0.2em}{\tiny\fontfamily{cmr}\selectfont\textcopyright}
 \texttt{samcarter}. Permission is granted to copy, distribute and\slash or modify this software under the terms of the LaTeX project public licence, version 1.3c or later \url{http://www.latex-project.org/lppl.txt}.
-
-The shown example marmots are purely fictional characters, any resemblance to real marmots or persons is purely coincidental and no copyright infringement is intended.
 
 \section{Usage}
 
@@ -158,7 +155,6 @@ The shapes of the jigsaw pieces are designed to seamlessly fit into each other w
 \begin{scope}[xshift=1cm]
     \piece[lightgray]{1}{0}{0}{-1}
 \end{scope}
-
 \begin{scope}[yshift=-1cm]
     \piece[lightgray]{0}{-1}{-1}{0}
 \end{scope}
@@ -188,7 +184,7 @@ Finally there is also the possibility to automatically generate complete jigsaw 
 
 \begin{tcblisting}{title={Automatic jigsaw generation}}
 \begin{tikzpicture}
-\jigsaw{5}{3}
+\jigsaw{6}{4}
 \end{tikzpicture}
 \end{tcblisting}
 
@@ -196,8 +192,10 @@ This automatically generated jigsaw can also be overlaid on a picture:
 
 \begin{tcblisting}{title={Overlaid image}}
 \begin{tikzpicture}
-\jigsaw{5}{3}
-\node {\includegraphics[width=\linewidth]{example-image}};
+\clip (0,0) rectangle (6,4);
+\node at (3,2) {\includegraphics[width=6cm]
+	{example-image-duck}};
+\jigsaw{6}{4}
 \end{tikzpicture}
 \end{tcblisting}
 

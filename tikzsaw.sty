@@ -79,9 +79,9 @@
 \newcommand{\jigsaw}[2]{%
     \def\xmax{#1}
     \def\ymax{#2}
-    \foreach \x in {0,...,\xmax}{
-        \foreach \y in {0,...,\ymax}{
-            \ifnum\y=0
+    \foreach \x in {1,...,\xmax}{
+        \foreach \y in {1,...,\ymax}{
+            \ifnum\y=1
                 \def\bottom{0}
             \else
                 \pgfmathrandomitem{\bottom}{inout}%
@@ -91,10 +91,10 @@
             \else
                 \pgfmathrandomitem{\right}{inout}%
             \fi
-            \begin{scope}[xshift=\x cm, yshift=\y cm]
+            \begin{scope}[xshift=\x cm-1cm, yshift=\y cm-1cm]
                 \halfpiece{\bottom}{\right}
             \end{scope}
         }
     }
-    \draw (0,0) -- (0,\ymax+1) -- (\xmax+1,\ymax+1);
+    \draw (0,0) -- (0,\ymax) -- (\xmax,\ymax);
 }
