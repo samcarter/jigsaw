@@ -1,0 +1,204 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Documentation for the tikzsaw package
+% A package to draw jigsaw pieces with tikz
+% Maintained by samcarter
+%
+% Project repository and bug tracker:
+% https://github.com/samcarter8/tikzmarmots
+%
+% Released under the LaTeX Project Public License v1.3c or later
+% See http://www.latex-project.org/lppl.txt
+%
+% Version 0.1
+% Aug 29, 2018  
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[parskip=half]{scrartcl}
+
+% packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[T1]{fontenc}	
+\usepackage[utf8]{inputenc}		
+\usepackage[english]{babel}
+\usepackage[bitstream-charter]{mathdesign}
+\usepackage{tikzsaw}
+\usepackage[most]{tcolorbox}
+\usepackage[paper=a4paper,margin=3cm]{geometry}
+\usepackage{url}
+\usepackage{xspace}
+\usepackage{scrlayer-scrpage} 
+\usepackage[hang,flushmargin,bottom]{footmisc}
+\usepackage[colorlinks=true,breaklinks=true,urlcolor=duckblue,linkcolor=duckblue,citecolor=duckblue,filecolor=duckblue]{hyperref}
+
+% macros %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\CTAN}{\textsc{CTAN}\xspace}
+\newcommand{\TikZ}{Ti\emph{k}Z\xspace}
+\newcommand{\tikzsaw}{Ti\emph{k}Zsaw\xspace}
+\newcommand{\miktex}{MiK\TeX\xspace}
+\newcommand{\texlive}{\TeX{}Live\xspace}
+
+% customisation %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{duckblue}{RGB}{0,70,140}
+\definecolor{marmotred}{RGB}{140,20,40}
+\addtokomafont{sectioning}{\color{teal}}
+\addtokomafont{date}{\normalsize}
+\addtokomafont{author}{\normalsize}
+\setlength{\footnotemargin}{0.7em}
+
+\lstdefinestyle{jigsawstyle}{%
+	language={[latex]TeX},
+	tabsize=2,
+	breaklines,
+	basicstyle=\footnotesize\ttfamily,
+	commentstyle={\color{teal}\slshape}, 
+	columns=fullflexible,
+	emphstyle=\color{orange!70!black},
+	emph=[1]{piece,tile,jigsaw},
+	texcsstyle=*\color{duckblue}\bfseries,
+	keywordstyle=\color{red!60!black}\bfseries,
+	morekeywords={tikzpicture,scope,patterns,calc,pgfinterruptboundingbox},
+	moretexcs={marmot,path,definecolor,scalebox,foreach,node,draw,PassOptionsToPackage,usetikzlibrary,selectcolormodel,colorlet,includegraphics,tikzset,shade,duck},
+	delim ={[s][\ttfamily\color{green!50!black}]{$}{$}},
+	moredelim=[is][\footnotesize\ttfamily\color{orange!70!black}]{|}{|},
+	moredelim={[s][\color{gray}]{<}{>}},
+	index=[1][emph]
+}
+
+\tcbset{%
+	colframe=teal,
+	arc=2mm,
+	fonttitle=\bfseries,
+	sidebyside,
+	listing options={style=jigsawstyle},
+	center lower,
+	righthand width=5.7cm,
+	bottom=0pt, 
+	top=0pt,
+}
+
+\lstset{style=jigsawstyle}
+
+% meta %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{The \texorpdfstring{\tikzsaw}{tikzsaw} package}
+\subtitle{drawing jigsaw pieces in \TikZ}
+\author{%
+	\texorpdfstring{
+		\begin{tikzpicture}
+			 \piece[lightgray!70!white]{1}{-1}{1}{-1}
+		\end{tikzpicture}\\[0.8em]		
+		\texttt{samcarter}\\
+		\url{https://github.com/samcarter8/tikzsaw}\\
+%		\url{https://www.ctan.org/pkg/tikzsaw}
+	}{samcarter}}
+\date{Version 0.1 -- \today}
+
+\begin{document}
+\maketitle
+
+\section{Introduction}
+\label{intro}
+
+The \tikzsaw package allows to draw adjustable jigsaw pieces in \TikZ, to combine them and even to automatically create complete jigsaws. It is based on an answer on TeX.Stackexchange\footnote{\url{https://tex.stackexchange.com/a/446296/36296}}
+
+The development version of this package is located at 
+\url{github.com/samcarter8/tikzsaw}. If you have any problems, ideas or other feedback, please make constructive use of its bug tracker.
+
+\subsection{License}
+
+Copyright \raisebox{0.2em}{\tiny\fontfamily{cmr}\selectfont\textcopyright}
+\texttt{samcarter}. Permission is granted to copy, distribute and\slash or modify this software under the terms of the LaTeX project public licence, version 1.3c or later \url{http://www.latex-project.org/lppl.txt}.
+
+The shown example marmots are purely fictional characters, any resemblance to real marmots or persons is purely coincidental and no copyright infringement is intended.
+
+\section{Usage}
+
+An individual jigsaw piece can be drawn with
+
+\begin{tcolorbox}[title={Jigsaw piece}]
+\begin{lstlisting}
+\piece{<bottom>}{<right>}{<top>}{<left>}
+\end{lstlisting}
+\tcblower
+\begin{tikzpicture}
+	 \piece{1}{-1}{1}{1}
+\end{tikzpicture}
+\end{tcolorbox}
+
+wherein arguments specify for each side if it should be a tab (-1), a straight line (0) or a slot (1). The following example will produce a jigsaw piece with one tab sticking out, one straight boarder and one slot:
+
+\begin{tcblisting}{title={Jigsaw piece}}
+\begin{tikzpicture}
+	 \piece{1}{-1}{0}{1}
+\end{tikzpicture}
+\end{tcblisting}
+
+With an optional argument, a fill colour can be passed to the piece:
+
+\begin{tcblisting}{title={Filled piece}}
+\begin{tikzpicture}
+	 \piece[teal]{-1}{1}{-1}{1}
+\end{tikzpicture}
+\end{tcblisting}
+
+Or to change the line colour:
+
+\begin{tcblisting}{title={Coloured piece}}
+\begin{tikzpicture}
+	\color{teal}\piece{-1}{-1}{1}{1}
+\end{tikzpicture}
+\end{tcblisting}
+
+The shapes of the jigsaw pieces are designed to seamlessly fit into each other which allows to produce tile patters.
+
+\begin{tcblisting}{title={Manual tile pattern}}
+\begin{tikzpicture}
+\begin{scope}
+    \piece[teal]{1}{1}{0}{0}
+\end{scope}
+\begin{scope}[xshift=1cm]
+    \piece[lightgray]{1}{0}{0}{-1}
+\end{scope}
+
+\begin{scope}[yshift=-1cm]
+    \piece[lightgray]{0}{-1}{-1}{0}
+\end{scope}
+\begin{scope}[xshift=1cm,yshift=-1cm]
+    \piece[teal]{0}{0}{-1}{1}
+\end{scope}
+\end{tikzpicture}
+\end{tcblisting}
+
+Manually position each jigsaw piece at the correct position can be tedious, therefore the command \lstinline|\tile[<colour>]{<bottom>}{<right>}{<top>}{<left>}| was added. It can be used outside of of the \lstinline|tikzpicture| environment to place the pieces besides each other like normal letters in a text. Line breaks have to be added at the appropriate positions and one has to be careful not to introduce additional spaces between the jigsaw pieces from unprotected line endings.
+
+\begin{tcblisting}{title={The tile command}}
+\tile[violet]{1}{1}{0}{0}%
+\tile[lightgray]{1}{-1}{0}{-1}%
+\tile[teal]{1}{0}{0}{1}
+
+\tile[teal]{1}{-1}{-1}{0}%
+\tile[violet]{1}{-1}{-1}{1}%
+\tile[lightgray]{-1}{0}{-1}{1}
+
+\tile[lightgray]{0}{-1}{-1}{0}%
+\tile[teal]{0}{-1}{-1}{1}%
+\tile[violet]{0}{0}{1}{1}
+\end{tcblisting}
+
+Finally there is also the possibility to automatically generate complete jigsaw puzzles using the command \lstinline|\jigsaw{<x>}{<y>}|, with \lstinline|<x>| and \lstinline|<y>| the number of rows and columns, respectively.
+
+\begin{tcblisting}{title={Automatic jigsaw generation}}
+\begin{tikzpicture}
+\jigsaw{5}{3}
+\end{tikzpicture}
+\end{tcblisting}
+
+This automatically generated jigsaw can also be overlaid on a picture:
+
+\begin{tcblisting}{title={Overlaid image}}
+\begin{tikzpicture}
+\jigsaw{5}{3}
+\node {\includegraphics[width=\linewidth]{example-image}};
+\end{tikzpicture}
+\end{tcblisting}
+
+\end{document}
