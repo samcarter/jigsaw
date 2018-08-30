@@ -1,17 +1,17 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-% Documentation for the tikzsaw package
+% Documentation for the jigsaw package
 % A package to draw jigsaw pieces with tikz
 % Maintained by samcarter
 %
 % Project repository and bug tracker:
-% https://github.com/samcarter8/tikzsaw
+% https://github.com/samcarter8/jigsaw
 %
 % Released under the LaTeX Project Public License v1.3c or later
 % See http://www.latex-project.org/lppl.txt
 %
 % Version 0.1
-% Aug 29, 2018  
+% Aug 30, 2018  
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \documentclass[parskip=half]{scrartcl}
@@ -21,7 +21,7 @@
 \usepackage[utf8]{inputenc}		
 \usepackage[english]{babel}
 \usepackage[bitstream-charter]{mathdesign}
-\usepackage{tikzsaw}
+\usepackage{jigsaw}
 \usepackage[most]{tcolorbox}
 \usepackage[paper=a4paper,margin=2.9cm]{geometry}
 \usepackage{url}
@@ -33,7 +33,6 @@
 % macros %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\CTAN}{\textsc{CTAN}\xspace}
 \newcommand{\TikZ}{Ti\emph{k}Z\xspace}
-\newcommand{\tikzsaw}{Ti\emph{k}Zsaw\xspace}
 \newcommand{\miktex}{MiK\TeX\xspace}
 \newcommand{\texlive}{\TeX{}Live\xspace}
 
@@ -77,7 +76,7 @@
 \lstset{style=jigsawstyle}
 
 % meta %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\title{The \texorpdfstring{\tikzsaw}{tikzsaw} package}
+\title{The jigsaw package}
 \subtitle{Drawing jigsaw pieces in \TikZ}
 \author{%
 	\texorpdfstring{
@@ -85,8 +84,8 @@
 			 \piece[lightgray!70!white]{1}{-1}{1}{-1}
 		\end{tikzpicture}\\[0.8em]		
 		\texttt{samcarter}\\
-		\url{https://github.com/samcarter8/tikzsaw}\\
-%		\url{https://www.ctan.org/pkg/tikzsaw}
+		\url{https://github.com/samcarter8/jigsaw}\\
+%		\url{https://www.ctan.org/pkg/jigsaw}
 	}{samcarter}}
 \date{Version 0.1 -- \today}
 
@@ -96,10 +95,10 @@
 \section{Introduction}
 \label{intro}
 
-The \tikzsaw package allows to draw adjustable jigsaw pieces in \TikZ, to combine them and even to automatically create complete jigsaws. It is based on the TeX.Stackexchange answers \url{https://tex.stackexchange.com/a/446296/36296}.
+The jigsaw package allows to draw adjustable jigsaw pieces in \TikZ, to combine them and even to automatically create complete jigsaws. It is based on the TeX.Stackexchange answers \url{https://tex.stackexchange.com/a/446296/36296}.
 
 The development version of this package is located at 
-\url{github.com/samcarter8/tikzsaw}. If you have any problems, ideas or other feedback, please make constructive use of its bug tracker.
+\url{github.com/samcarter8/jigsaw}. If you have any problems, ideas or other feedback, please make constructive use of its bug tracker.
 
 Copyright \raisebox{0.2em}{\tiny\fontfamily{cmr}\selectfont\textcopyright}
 \texttt{samcarter}. Permission is granted to copy, distribute and\slash or modify this software under the terms of the LaTeX project public licence, version 1.3c or later \url{http://www.latex-project.org/lppl.txt}.
