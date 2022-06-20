@@ -52,17 +52,17 @@
 	\ifx\tmp\@nnil
 	\else
 		\fill[#1] 
-    	\side{#2} -- (0.5,0.5)
-    	[rotate around={90:(0.5,0.5)}] \side{#3} -- (0.5,0.5)
-    	[rotate around={180:(0.5,0.5)}] \side{#5} -- (0.5,0.5)
-    	[rotate around={270:(0.5,0.5)}] \side{#4} -- (0.5,0.5)
+    	\side{#2}
+    	[rotate around={90:(0.5,0.5)}] -- \side{#3} 
+    	[rotate around={90:(0.5,0.5)}] -- \side{#4} 
+    	[rotate around={90:(0.5,0.5)}] -- \side{#5} 
     	-- cycle;
   \fi
   \draw 
     \side{#2}
-    [rotate around={90:(0.5,0.5)}] \side{#3}
-    [rotate around={180:(0.5,0.5)}] \side{#5}
-    [rotate around={270:(0.5,0.5)}] \side{#4};    
+    [rotate around={90:(0.5,0.5)}] -- \side{#3}
+    [rotate around={90:(0.5,0.5)}] -- \side{#4}
+    [rotate around={90:(0.5,0.5)}] -- \side{#5};    
 }
 
 \newcommand{\tile}[5][\@nil]{%
