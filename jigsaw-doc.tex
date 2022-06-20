@@ -148,6 +148,17 @@ Or to change the line colour:
 \end{tikzpicture}
 \end{tcblisting}
 
+The piece shape is also available as \TikZ \verb|pic|:
+
+\begin{tcblisting}{title={\texttt{pic}}}
+\begin{tikzpicture}
+	\path (2,-3) pic[
+    fill=lightgray,draw=teal,thick
+  ]{piece={1}{-1}{1}{0}};
+\end{tikzpicture}
+\end{tcblisting}
+
+
 The shapes of the jigsaw pieces are designed to seamlessly fit into each other which allows to produce tile patters.
 
 \begin{tcblisting}{title={Manual tile pattern}}
