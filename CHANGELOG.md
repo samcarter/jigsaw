@@ -4,6 +4,15 @@
 
 ### New
 
+### Changed
+
+### Fixed
+
+
+## [v0.2]
+
+### New
+
 - adding TikZ `pic` for pieces
 
 ### Changed
@@ -14,7 +23,7 @@
 
 - fixed discontinuity at corners
 
-## [v0.1a]
+## [v0.1]
 
 ### New
 
@@ -24,5 +33,6 @@ produce tile patterns or to automatically generate complete jigsaws.
 
 ------
 
-[Unreleased]: https://github.com/samcarter/jigsaw/compare/v0.1...HEAD
-[v0.1]: https://github.com/samcarter/jigsaw/compare/v0.0...v0.1a
+[Unreleased]: https://github.com/samcarter/jigsaw/compare/v0.2...HEAD
+[v0.2]: https://github.com/samcarter/jigsaw/compare/v0.1...v0.2
+[v0.1]: https://github.com/samcarter/jigsaw/compare/v0.0...v0.1
