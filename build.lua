@@ -116,8 +116,8 @@ docfiles = {"*-doc.tex"}
 textfiles= {"README.md"}
 ctanreadme= "README.md"
 packtdszip   = false
-installfiles = {"*.sty","*.code.tex"}
-sourcefiles = {"*.sty","*.code.tex"}  
+installfiles = {"*.sty"}
+sourcefiles = {"*.sty"}  
 excludefiles = {"documentation.pdf"}
 
 -- configuring ctan upload ===========================================
