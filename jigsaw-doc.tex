@@ -21,7 +21,9 @@
 \usepackage[utf8]{inputenc}		
 \usepackage[english]{babel}
 \usepackage[bitstream-charter]{mathdesign}
+%\usepackage{duckuments}
 \usepackage{jigsaw}
+\usetikzlibrary{matrix}
 \usepackage[most]{tcolorbox}
 \usepackage[paper=a4paper,margin=2.9cm]{geometry}
 \usepackage{url}
@@ -61,7 +63,7 @@
 	texcsstyle=*\color{duckblue}\bfseries,
 	keywordstyle=\color{red!60!black}\bfseries,
 	morekeywords={tikzpicture,scope},
-	moretexcs={path,node,draw,clip,includegraphics,color,piece,tile,jigsaw},
+	moretexcs={path,node,draw,clip,pic,includegraphics,color,piece,tile,jigsaw},
 	delim ={[s][\ttfamily\color{green!50!black}]{$}{$}},
 	moredelim=[is][\footnotesize\ttfamily\color{orange!70!black}]{|}{|},
 	moredelim={[s][\color{gray}]{<}{>}},
@@ -158,8 +160,7 @@ The piece shape is also available as \TikZ \verb|pic|:
 \end{tikzpicture}
 \end{tcblisting}
 
-
-The shapes of the jigsaw pieces are designed to seamlessly fit into each other which allows to produce tile patters.
+The shapes of the jigsaw pieces are designed to seamlessly fit into each other which allows to produce tile patters in various ways:
 
 \begin{tcblisting}{title={Manual tile pattern}}
 \begin{tikzpicture}
@@ -175,6 +176,31 @@ The shapes of the jigsaw pieces are designed to seamlessly fit into each other w
 \begin{scope}[xshift=1cm,yshift=-1cm]
     \piece[teal]{0}{0}{-1}{1}
 \end{scope}
+\end{tikzpicture}
+\end{tcblisting}
+
+\begin{tcblisting}{title={Manual pattern using \texttt{\textbackslash pic}}}
+\begin{tikzpicture}
+\pic at (0,1) [fill=lightgray,draw]
+  {piece={1}{1}{0}{0}};
+\pic at (1,1) [fill=teal]
+  {piece={1}{0}{0}{-1}};  
+\pic at (0,0) [fill=teal]
+  {piece={0}{-1}{-1}{0}};  
+\pic at (1,0) [fill=lightgray]
+  {piece={0}{0}{-1}{1}};     
+\end{tikzpicture}
+\end{tcblisting}
+
+\begin{tcblisting}{title={Manual pattern using Ti\emph{k}Z matrix}}
+% \usetikzlibrary{matrix}
+\begin{tikzpicture}
+\matrix [nodes=draw]{
+\pic [fill=lightgray]{piece={-1}{-1}{0}{0}};&
+\pic [fill=teal]{piece={1}{0}{0}{-1}}; \\
+\pic [fill=teal]{piece={0}{-1}{1}{0}}; &
+\pic [fill=lightgray]{piece={0}{0}{-1}{1}};\\
+};
 \end{tikzpicture}
 \end{tcblisting}
 
@@ -207,8 +233,9 @@ This automatically generated jigsaw can also be overlaid on a picture:
 \begin{tcblisting}{title={Overlaid image}}
 \begin{tikzpicture}
 \clip (0,0) rectangle (6,4);
-\node at (3,2) {\includegraphics[width=6cm]
-	{example-image-duck}};
+\node at (3,2) {%
+  \includegraphics[width=6cm,height=4cm]{example-image-duck}%
+};
 \jigsaw{6}{4}
 \end{tikzpicture}
 \end{tcblisting}

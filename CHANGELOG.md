@@ -6,6 +6,8 @@
 
 ### Changed
 
+- added more example to doc
+
 ### Fixed
 
 - bounding box size of \pic
