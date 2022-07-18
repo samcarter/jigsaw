@@ -8,6 +8,7 @@
 
 ### Fixed
 
+- bounding box size of \pic
 
 ## [v0.2]
 
