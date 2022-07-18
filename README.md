@@ -2,7 +2,7 @@
 
 A small LaTeX package to draw jigsaw pieces with TikZ. It is possible to draw individual pieces and adjust their shape, produce tile patterns or to automatically generate complete jigsaws.
 
-Current version: 2022/06/20 version v0.2
+Current version: 2022/07/18 version v0.3
 
 This project is licensed under the LaTeX Project Public License v1.3c or later, see http://www.latex-project.org/lppl.txt
 
