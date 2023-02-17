@@ -10,9 +10,6 @@
 % Released under the LaTeX Project Public License v1.3c or later
 % See http://www.latex-project.org/lppl.txt
 %
-% Version 0.1a
-% NOv 9, 2018  
-%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \documentclass[parskip=half]{scrartcl}
 
@@ -155,10 +152,14 @@ The piece shape is also available as \TikZ \verb|pic|:
 \begin{tcblisting}{title={\texttt{pic}}}
 \begin{tikzpicture}
 	\path (2,-3) pic[
-    fill=lightgray,draw=teal,thick
+    fill=lightgray, draw=teal,
+    thick, scale=2,
+    pic text={Some Text}
   ]{piece={1}{-1}{1}{0}};
 \end{tikzpicture}
 \end{tcblisting}
+
+Using the \TikZ \verb|pic| allows to apply various \TikZ option like \verb|scale| or add text in the centre of the piece via \verb|pic text={...}|.
 
 The shapes of the jigsaw pieces are designed to seamlessly fit into each other which allows to produce tile patters in various ways:
 
@@ -187,7 +188,7 @@ The shapes of the jigsaw pieces are designed to seamlessly fit into each other w
   {piece={1}{0}{0}{-1}};  
 \pic at (0,0) [fill=teal]
   {piece={0}{-1}{-1}{0}};  
-\pic at (1,0) [fill=lightgray]
+\pic at (1,0) [fill=lightgray,draw]
   {piece={0}{0}{-1}{1}};     
 \end{tikzpicture}
 \end{tcblisting}
@@ -196,7 +197,7 @@ The shapes of the jigsaw pieces are designed to seamlessly fit into each other w
 % \usetikzlibrary{matrix}
 \begin{tikzpicture}
 \matrix [nodes=draw]{
-\pic [fill=lightgray]{piece={-1}{-1}{0}{0}};&
+\pic [fill=lightgray]{piece={-1}{1}{0}{0}};&
 \pic [fill=teal]{piece={1}{0}{0}{-1}}; \\
 \pic [fill=teal]{piece={0}{-1}{1}{0}}; &
 \pic [fill=lightgray]{piece={0}{0}{-1}{1}};\\
