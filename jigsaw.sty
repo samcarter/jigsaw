@@ -118,11 +118,8 @@
         [rotate around={90:(0.5,0.5)}] -- \side{#3} 
         [rotate around={90:(0.5,0.5)}] -- \side{#4} 
         -- cycle;
-        % expansion trick to avoid unknown options from
-        % https://topanswers.xyz/tex?q=3340#a3446 and https://topanswers.xyz/tex?q=3340#a3413
-        \begingroup\edef\tmp{\endgroup\noexpand\node[draw=none,\unexpanded\expandafter{\tikzpictextoptions}}%
-        \tmp
-        ] at (0.5,0.5) {\tikzpictext};
+        % expansion trick from https://topanswers.xyz/tex?q=3340#a3677
+        \node[draw=none,style/.expand once=\tikzpictextoptions] at (0.5,0.5) {\tikzpictext};
       \end{pgfinterruptboundingbox}
     }
   },
