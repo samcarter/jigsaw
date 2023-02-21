@@ -4,9 +4,11 @@
 
 ### New
 
-### Changed
+- added support for `pic text` and `pic text options`
 
 ### Fixed
+
+- fixed problem with line joints in scaled jigsaw pieces
 
 
 ## [v0.3]
