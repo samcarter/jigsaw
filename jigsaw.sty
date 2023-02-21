@@ -46,31 +46,30 @@
 (1.0,#1*0.00) -- ++(.5\pgflinewidth/\scalingfactor,0)
 }
 
-\newcommand{\halfpiece}[2]{
+\newcommand{\halfpiece}[2]{%
   \jigsaw@getscaling%
   \draw \side{#1} [rotate around={90:(0.5,0.5)}] \side{#2};
 }
 
-\newcommand{\piece}[5][\@nil]{
+\NewDocumentCommand{\piece}{ommmm}{%
   \jigsaw@getscaling%
-  \def\tmp{#1}%
-  \ifx\tmp\@nnil
-  \else
+  \IfValueT{#1}{%
     \fill[#1] 
       \side{#2}
       [rotate around={90:(0.5,0.5)}] -- \side{#3} 
       [rotate around={90:(0.5,0.5)}] -- \side{#4} 
       [rotate around={90:(0.5,0.5)}] -- \side{#5} 
       -- cycle;
-  \fi
+  }%
   \draw 
     \side{#2}
     [rotate around={90:(0.5,0.5)}] -- \side{#3}
     [rotate around={90:(0.5,0.5)}] -- \side{#4}
-    [rotate around={90:(0.5,0.5)}] -- \side{#5};    
+    [rotate around={90:(0.5,0.5)}] -- \side{#5}
+    -- cycle;    
 }
 
-\newcommand{\tile}[5][\@nil]{%
+\NewDocumentCommand{\tile}{ommmm}{%
   \begin{tikzpicture}
     \path (0,0) rectangle (1,0.97);
     \begin{pgfinterruptboundingbox}
@@ -119,7 +118,7 @@
         [rotate around={90:(0.5,0.5)}] -- \side{#4} 
         -- cycle;
         % expansion trick from https://topanswers.xyz/tex?q=3340#a3677
-        \node[draw=none,style/.expand once=\tikzpictextoptions] at (0.5,0.5) {\tikzpictext};
+        \node[draw=none,fill=none,style/.expand once=\tikzpictextoptions] at (0.5,0.5) {\tikzpictext};
       \end{pgfinterruptboundingbox}
     }
   },
