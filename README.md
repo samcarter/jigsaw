@@ -1,4 +1,4 @@
-![](https://raw.githubusercontent.com/samcarter/jigsaw/main/icon.png)
+![](https://raw.githubusercontent.com/samcarter/jigsaw/main/ICON.png)
 
 
 # Jigsaw

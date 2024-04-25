@@ -14,4 +14,5 @@ ctanprefix = "/graphics/pgf/contrib/"
 ctansummary = "This is a small LaTeX package to draw jigsaw pieces with TikZ"
 
 -- common settings =============================================================
+-- https://github.com/samcarter/beamertheme-sam/blob/main/build-settings.lua
 local common_settings, build_settings = pcall(require, "../beamertheme-sam/build-settings.lua")
