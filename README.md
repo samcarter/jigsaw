@@ -29,4 +29,4 @@ The project repository, including a bug tracker, can be found at https://github.
 \end{document}
 ```
 
-For more details, please consult the [package documentation](https://github.com/samcarter/jigsaw/blob/main/documentation.pdf).
+For more details, please consult the [package documentation](https://github.com/samcarter/jigsaw/blob/main/DOCUMENTATION.pdf).
