@@ -1,0 +1,162 @@
+\documentclass[xcolor={svgnames},aspectratio=169]{beamer}
+
+\usepackage{tikz}
+\usepackage{jigsaw}
+\setbeamertemplate{navigation symbols}{}
+\usetikzlibrary{overlay-beamer-styles}
+
+\definecolor{blue}{RGB}{0,70,140}
+
+\newcommand{\mypiece}[6]{%
+  \begin{scope}[xshift=#1 cm, yshift=#2 cm]
+    \alt<-+>{
+      \color{blue}\piece[blue]{#3}{#4}{#5}{#6}
+    }{
+      \color{black!70!white}\piece{#3}{#4}{#5}{#6}
+    }
+  \end{scope}
+}
+
+\begin{document}
+
+\begin{frame}<-180>[plain]%
+  \pgfmathsetseed{2}%
+  \begin{tikzpicture}[remember picture, overlay]%
+    \node at (current page.center) {\includegraphics[width=\paperwidth]{example-image-duck}};
+    \begin{scope}[xscale=1.23,xshift=-0.81cm,yshift=-5.4cm,yscale=0.9]
+      \mypiece{3}{2}{1}{1}{1}{-1}
+      \mypiece{6}{3}{-1}{-1}{1}{-1}
+      \mypiece{6}{0}{0}{-1}{-1}{-1}
+      \mypiece{7}{5}{1}{1}{1}{-1}
+      \mypiece{0}{3}{-1}{-1}{-1}{0}
+      \mypiece{2}{5}{1}{1}{1}{-1}
+      \mypiece{9}{7}{-1}{-1}{1}{-1}
+      \mypiece{6}{8}{-1}{-1}{1}{1}
+      \mypiece{1}{7}{-1}{-1}{-1}{1}
+      \mypiece{8}{8}{-1}{-1}{1}{1}
+      \mypiece{0}{2}{1}{1}{1}{0}
+      \mypiece{7}{0}{0}{-1}{1}{1}
+      \mypiece{4}{4}{-1}{-1}{-1}{1}
+      \mypiece{10}{2}{1}{1}{-1}{1}
+      \mypiece{0}{1}{1}{1}{-1}{0}
+      \mypiece{9}{9}{1}{1}{0}{1}
+      \mypiece{7}{2}{-1}{-1}{-1}{-1}
+      \mypiece{3}{3}{-1}{-1}{1}{-1}
+      \mypiece{0}{0}{0}{-1}{-1}{0}
+      \mypiece{12}{8}{-1}{0}{-1}{1}
+      \mypiece{1}{6}{1}{1}{1}{1}
+      \mypiece{5}{8}{-1}{-1}{-1}{-1}
+      \mypiece{4}{7}{1}{1}{-1}{-1}
+      \mypiece{8}{5}{1}{1}{-1}{-1}
+      \mypiece{11}{5}{1}{1}{-1}{1}
+      \mypiece{7}{4}{1}{1}{-1}{1}
+      \mypiece{3}{8}{1}{1}{-1}{-1}
+      \mypiece{1}{2}{1}{1}{-1}{-1}
+      \mypiece{9}{4}{1}{1}{1}{-1}
+      \mypiece{9}{8}{-1}{-1}{-1}{1}
+      \mypiece{6}{9}{-1}{-1}{0}{-1}
+      \mypiece{7}{8}{-1}{-1}{-1}{1}
+      \mypiece{12}{3}{1}{0}{1}{1}
+      \mypiece{11}{0}{0}{1}{-1}{-1}
+      \mypiece{10}{7}{-1}{-1}{-1}{1}
+      \mypiece{12}{5}{1}{0}{1}{-1}
+      \mypiece{8}{0}{0}{-1}{1}{1}
+      \mypiece{4}{3}{1}{1}{1}{1}
+      \mypiece{3}{7}{1}{1}{-1}{1}
+      \mypiece{9}{5}{-1}{-1}{-1}{-1}
+      \mypiece{5}{7}{-1}{-1}{1}{-1}
+      \mypiece{4}{1}{-1}{-1}{-1}{-1}
+      \mypiece{0}{4}{1}{1}{-1}{0}
+      \mypiece{7}{7}{1}{1}{1}{1}
+      \mypiece{5}{9}{1}{1}{0}{-1}
+      \mypiece{4}{2}{1}{1}{-1}{-1}
+      \mypiece{12}{2}{-1}{0}{-1}{1}
+      \mypiece{2}{3}{1}{1}{1}{-1}
+      \mypiece{0}{6}{-1}{-1}{1}{0}
+      \mypiece{9}{0}{0}{-1}{1}{1}
+      \mypiece{10}{0}{0}{1}{-1}{1}
+      \mypiece{11}{6}{1}{1}{-1}{1}
+      \mypiece{11}{7}{1}{1}{1}{1}
+      \mypiece{10}{3}{1}{1}{1}{-1}
+      \mypiece{5}{3}{1}{1}{-1}{-1}
+      \mypiece{5}{2}{1}{1}{-1}{-1}
+      \mypiece{9}{6}{1}{1}{1}{-1}
+      \mypiece{5}{1}{1}{1}{-1}{1}
+      \mypiece{2}{9}{-1}{-1}{0}{-1}
+      \mypiece{1}{3}{1}{1}{-1}{1}
+      \mypiece{11}{2}{-1}{-1}{1}{-1}
+      \mypiece{12}{7}{-1}{0}{1}{-1}
+      \mypiece{10}{5}{-1}{-1}{1}{1}
+      \mypiece{12}{0}{0}{0}{-1}{-1}
+      \mypiece{0}{8}{-1}{-1}{1}{0}
+      \mypiece{7}{1}{-1}{-1}{1}{-1}
+      \mypiece{10}{8}{1}{1}{1}{1}
+      \mypiece{7}{3}{1}{1}{-1}{1}
+      \mypiece{0}{9}{-1}{-1}{0}{0}
+      \mypiece{1}{9}{1}{1}{0}{1}
+      \mypiece{1}{1}{1}{1}{-1}{-1}
+      \mypiece{1}{8}{1}{1}{-1}{1}
+      \mypiece{8}{3}{1}{1}{-1}{-1}
+      \mypiece{1}{0}{0}{-1}{-1}{1}
+      \mypiece{2}{4}{-1}{-1}{-1}{-1}
+      \mypiece{11}{1}{1}{1}{1}{-1}
+      \mypiece{4}{6}{1}{1}{-1}{-1}
+      \mypiece{9}{1}{-1}{-1}{1}{1}
+      \mypiece{9}{2}{-1}{-1}{-1}{-1}
+      \mypiece{2}{0}{0}{-1}{1}{1}
+      \mypiece{2}{8}{1}{1}{1}{-1}
+      \mypiece{4}{9}{1}{1}{0}{-1}
+      \mypiece{4}{0}{0}{-1}{1}{1}
+      \mypiece{7}{9}{1}{1}{0}{1}
+      \mypiece{6}{4}{-1}{-1}{-1}{-1}
+      \mypiece{11}{3}{-1}{-1}{1}{-1}
+      \mypiece{4}{5}{1}{1}{-1}{1}
+      \mypiece{10}{4}{-1}{-1}{1}{-1}
+      \mypiece{6}{2}{1}{1}{1}{-1}
+      \mypiece{2}{7}{-1}{-1}{-1}{1}
+      \mypiece{12}{1}{1}{0}{1}{-1}
+      \mypiece{2}{2}{1}{1}{-1}{-1}
+      \mypiece{5}{0}{0}{1}{-1}{1}
+      \mypiece{8}{2}{1}{1}{-1}{1}
+      \mypiece{11}{4}{-1}{-1}{-1}{1}
+      \mypiece{5}{5}{-1}{-1}{1}{-1}
+      \mypiece{8}{4}{1}{1}{-1}{-1}
+      \mypiece{3}{1}{1}{1}{-1}{1}
+      \mypiece{6}{7}{-1}{-1}{1}{1}
+      \mypiece{8}{6}{1}{1}{-1}{1}
+      \mypiece{2}{1}{-1}{-1}{-1}{-1}
+      \mypiece{5}{6}{-1}{-1}{1}{-1}
+      \mypiece{8}{7}{1}{1}{1}{-1}
+      \mypiece{6}{6}{1}{1}{1}{1}
+      \mypiece{6}{5}{1}{1}{-1}{1}
+      \mypiece{12}{4}{-1}{0}{-1}{1}
+      \mypiece{9}{3}{1}{1}{-1}{-1}
+      \mypiece{3}{5}{-1}{-1}{-1}{-1}
+      \mypiece{1}{4}{1}{1}{-1}{-1}
+      \mypiece{11}{9}{1}{1}{0}{1}
+      \mypiece{3}{0}{0}{-1}{-1}{1}
+      \mypiece{0}{5}{1}{1}{1}{0}
+      \mypiece{1}{5}{1}{1}{-1}{-1}
+      \mypiece{10}{9}{-1}{-1}{0}{-1}
+      \mypiece{7}{6}{-1}{-1}{-1}{-1}
+      \mypiece{2}{6}{-1}{-1}{1}{-1}
+      \mypiece{12}{9}{1}{0}{0}{-1}
+      \mypiece{8}{1}{-1}{-1}{-1}{1}
+      \mypiece{3}{6}{1}{1}{-1}{1}
+      \mypiece{0}{7}{-1}{-1}{1}{0}
+      \mypiece{8}{9}{-1}{-1}{0}{-1}
+      \mypiece{3}{9}{1}{1}{0}{1}
+      \mypiece{5}{4}{1}{1}{1}{1}
+      \mypiece{11}{8}{-1}{-1}{-1}{-1}
+      \mypiece{10}{6}{-1}{-1}{1}{-1}
+      \mypiece{12}{6}{-1}{0}{1}{-1}
+      \mypiece{3}{4}{-1}{-1}{1}{1}
+      \mypiece{10}{1}{1}{1}{-1}{1}
+      \mypiece{4}{8}{1}{1}{-1}{-1}
+      \mypiece{6}{1}{1}{1}{-1}{-1}
+    \end{scope}
+  \end{tikzpicture}%
+  \pause
+\end{frame}
+
+\end{document}
