@@ -1,3 +1,19 @@
+% !TeX program = txs:///arara
+% arara: latexmk: {
+% arara: --> engine: pdflatex,
+% arara: --> options: [
+% arara: -->    '-shell-escape',
+% arara: -->    '-synctex=1',
+% arara: -->    '-interaction=nonstopmode',
+% arara: -->  ]
+% arara: --> }
+% arara: animate: { 
+% arara: --> delay: 30, 
+% arara: --> loop: 0, 
+% arara: --> density: 100, 
+% arara: --> options: ['-alpha', 'remove'] 
+% arara: --> }
+% arara: clean: { extensions: [ aux, fdb_latexmk, fls, log, synctex.gz, nav, out, snm, toc ] }
 \documentclass[xcolor={svgnames},aspectratio=169]{beamer}
 
 \usepackage{tikz}
