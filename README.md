@@ -1,12 +1,10 @@
 ![](https://raw.githubusercontent.com/samcarter/jigsaw/main/ICON.png)
 
-
 # Jigsaw
 
-[![GitHub](https://img.shields.io/github/license/samcarter/jigsaw.svg?color=blue)](http://www.latex-project.org/lppl.txt)
-[![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/samcarter/jigsaw.svg?label=current%20version)](https://github.com/samcarter/jigsaw/releases/latest)
-[![CTAN](https://img.shields.io/ctan/v/jigsaw.svg)](https://ctan.org/pkg/jigsaw)
-
+[![License](https://img.shields.io/github/license/samcarter/jigsaw.svg?color=blue)](http://www.latex-project.org/lppl.txt)
+[![GitHub tag](https://img.shields.io/github/tag/samcarter/jigsaw.svg?label=current%20version&color=blue)](https://github.com/samcarter/jigsaw/releases/latest)
+[![CTAN](https://img.shields.io/ctan/v/jigsaw.svg?color=blue)](https://ctan.org/pkg/jigsaw)
 
 A small LaTeX package to draw jigsaw pieces with TikZ. It is possible to draw individual pieces and adjust their shape, produce tile patterns or to automatically generate complete jigsaws.
 
