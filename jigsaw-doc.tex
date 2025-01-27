@@ -14,6 +14,10 @@
 % arara: latexmk
 \documentclass{scrartcl}
 
+\usepackage[
+  themecolor=samlgreen
+]{\jobname-settings}
+
 % meta %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \title{The jigsaw package}
 \subtitle{Drawing jigsaw pieces in \TikZ}
@@ -24,13 +28,10 @@
     \end{tikzpicture}\\[0.8em]
     \texttt{samcarter}\\
     \url{https://github.com/samcarter/jigsaw}\\
-    \url{https://www.ctan.org/pkg/jigsaw}
+    \url{https://ctan.org/pkg/jigsaw}
   }{samcarter}}
 \date{Version v0.5 \textendash{} 2024/04/25}
-
-\usepackage[
-  themecolor=samlgreen
-]{\jobname-settings}
+\packagename{jigsaw}
 
 \colorlet{teal}{samlgreen}
 \colorlet{violet}{samviolet}
@@ -46,9 +47,7 @@
 
 The jigsaw package allows to draw adjustable jigsaw pieces in \TikZ, to combine them and even to automatically create complete jigsaws. It is based on the TeX.Stackexchange answers \url{https://tex.stackexchange.com/a/446296/36296}.
 
-The package is included in both \texlive and \miktex and available from \CTAN (\url{https://ctan.org/pkg/jigsaw}). The development version of this package is located at \url{github.com/samcarter/jigsaw}. If you have any problems, ideas or other feedback, please make constructive use of its bug tracker.
-
-Copyright \raisebox{0.2em}{\tiny\fontfamily{cmr}\selectfont\textcopyright} \texttt{samcarter}. Permission is granted to copy, distribute and\slash or modify this software under the terms of the LaTeX project public licence, version 1.3c or later \url{https://www.latex-project.org/lppl.txt}.
+\blurb
 
 \section{Usage}
 
